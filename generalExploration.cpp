@@ -1,10 +1,11 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main() {
-    int n = 4;
-    int *x = &n;
-    cout << *x << endl;
+    string word = "a";
+    
+    cout << sizeof(word) << endl;
     return 0;
 }
