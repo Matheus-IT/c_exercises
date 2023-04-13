@@ -7,7 +7,7 @@ int main() {
     int16_t s;
     cin >> n >> s;
 
-    uint16_t lowestBalance = s;
+    int16_t lowestBalance = s;
 
     for (uint16_t i = 0; i < n; i++) {
         int16_t m;
