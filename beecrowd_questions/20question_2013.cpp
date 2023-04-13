@@ -16,7 +16,7 @@ int main() {
         if (m >= 0) {
             s += m;
         } else {
-            s -= _ASM_GENERIC_ERRNO_BASE_H(m);
+            s -= abs(m);
         }
         
         if (s < lowestBalance) {
