@@ -1,5 +1,7 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
+#include <list>
 
 using namespace std;
 
@@ -9,15 +11,30 @@ int main() {
     cin >> n >> l >> q;
 
     string rich, temp;
+    list<string> people;
 
     for (uint16_t i = 0; i < n; i++) {
-        if (i == n-1) {
-            cin >> rich;
+        cin >> temp;
+        people.push_back(temp);
+    }
+
+    uint16_t i = 0;
+    list<string>::iterator peopleIt = people.begin();
+
+    while (true) {
+        if (l - q > 0) {
+            l -= q;
         } else {
-            cin >> temp;
+            advance(peopleIt, i);
+            rich = *peopleIt;
+            break;
+        }
+        i++;
+        if (i == people.size()) {
+            i = 0;
         }
     }
-    float res = l % int (n * q);
-    cout << rich << " " << res << endl;
+
+    cout << rich << " " << fixed << setprecision(1) << l << endl;
     return 0;
 }
